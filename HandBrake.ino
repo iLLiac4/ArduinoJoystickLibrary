@@ -10,8 +10,8 @@ Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_GAMEPAD,
   0, 0,                        // Button Count, Hat Switch Count
   false, false, false,    // X, Y, Z 
   false, false, false,    // Rx, Ry, Rz
-  false, true,              // rudder, throttle
-  false, false, false);   // accelerator, brake, steering
+  false, false,              // rudder, throttle
+  false, true, false);   // accelerator, brake, steering
 
 void setup()
 
@@ -27,5 +27,5 @@ void loop()
 {
   int pot = analogRead(A0);
   int mapped = map(pot,0,1023,0,255);
-  Joystick.setThrottle(mapped);
+  Joystick.setBrake(mapped);
 }
